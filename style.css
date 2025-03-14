@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.central-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+}
+
+* {
+  user-select: none;
+}
+
+
+.central-image {
+  pointer-events: none;
+}
+
+
+body {
+  cursor: pointer;
+}
+
+
+.heart {
+  position: absolute;
+  animation: float 5s ease-in-out infinite;
+  pointer-events: none; /* Evitar que los corazones interfieran con los clics */
+}
+
+/* Animación para que los corazones se muevan lentamente por la pantalla */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Aseguramos que la imagen central y el texto no se vean alterados */
+.central-image, .message {
+  position: relative; /* Para que se mantenga por encima de los corazones */
+  z-index: 10;
+}
